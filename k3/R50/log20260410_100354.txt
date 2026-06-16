@@ -1,0 +1,53 @@
+実行開始: 20260410_100354
+ログファイル: log20260410_100354.txt
+
+N = 200;       % Truncation wave number
+R = 50.0;      % Reynolds number
+k = 3;         % Wave number of external force
+alp = -2;      % gCLM parameter
+ord = 1;       % regularity parameter: X^s (s=ord)
+tol = eps^3;   % tolelance of approximate solution (if tol>0, then x(abs(x)<tol) = 0)
+e_ap = 10^(-12);% Stopping criterion for the Newton method
+M_su = 10000;  % Number of subinterval used in strongunimodality.m
+M_wu = 10000;  % Number of subinterval used in unimodality.m
+
+[1/3] 実行中: approximate_solution.m
+R = 50     N = 200    alp = -2     k = 3 
+  its  relative error    1  7.65519e+02
+    2  2.31995e+01
+    3  1.51953e-01
+    4  6.93908e-05
+    5  8.92281e-12
+    6  6.83522e-14
+経過時間は 0.047674 秒です。
+→ 完了
+[2/3] 実行中: FN_Int.m
+===> Default display of intervals by infimum/supremum (e.g. [ 3.14 , 3.15 ])
+===> Slow but sharp interval matrix multiplication in use
+R = 50     N = 200    alp = -2     k = 3  ord = 1 
+defect:3.4434e-09  |Nu|:4.6319e-13  z2:4.8698e-08
+  its   |z0|     |z1|     z2       z3       z4       z5       z6       |Wn|     |W*|     beta    1 1.02e+02 3.21e+02 4.87e-08 7.15e-14 2.00e+00 1.48e-02 6.06e-04 1.08e-14 2.42e-10 2.44e-16
+    2 1.02e+02 3.21e+02 4.87e-08 6.40e-17 2.00e+00 1.48e-02 6.06e-04 3.44e-13 3.76e-10 2.67e-10
+    3 1.02e+02 3.21e+02 4.87e-08 6.99e-11 2.00e+00 1.48e-02 6.06e-04 5.34e-13 4.66e-10 4.13e-10
+    4 1.02e+02 3.21e+02 4.87e-08 1.08e-10 2.00e+00 1.48e-02 6.06e-04 6.63e-13 5.26e-10 5.13e-10
+    5 1.02e+02 3.21e+02 4.87e-08 1.35e-10 2.00e+00 1.48e-02 6.06e-04 7.48e-13 5.65e-10 5.79e-10
+    6 1.02e+02 3.21e+02 4.87e-08 1.52e-10 2.00e+00 1.48e-02 6.06e-04 8.04e-13 5.91e-10 6.22e-10
+Verification has been completed!
+max(Wn): 8.037081e-13
+  alpha: 5.911994e-10
+経過時間は 6.970531 秒です。
+→ 完了
+[3/3] 実行中: unimodality.m
+===> Default display of intervals by infimum/supremum (e.g. [ 3.14 , 3.15 ])
+===> Slow but sharp interval matrix multiplication in use
+[1/3]: sign(ψ'[0,h]) != sign(ψ'[π-h,π])?
+Passed
+[2/3]: {i | 0 \in [ψ'([x_i])]} is consecutive?
+Passed
+[3/3]: ψ'' does not change its sign near ψ'(x)=0?
+Passed
+Unimodality is verified!
+経過時間は 4.318138 秒です。
+→ 完了
+
+実行終了: 20260410_100405

@@ -1,0 +1,49 @@
+実行開始: 20260526_143757
+ログファイル: log20260526_143757.txt
+
+N = 20000;       % Truncation wave number
+R = 10000.0;      % Reynolds number
+k = 7;         % Wave number of external force
+alp = -2;      % gCLM parameter
+ord = 1;       % regularity parameter: X^s (s=ord)
+tol = eps^3;   % tolelance of approximate solution (if tol>0, then x(abs(x)<tol) = 0)
+e_ap = 10^(-10);% Stopping criterion for the Newton method
+M_su = 10000;  % Number of subinterval used in strongunimodality.m
+M_wu = 10000;  % Number of subinterval used in unimodality.m
+
+[1/3] 実行中: approximate_solution.m
+R = 10000  N = 20000  alp = -2     k = 7 
+  its  relative error    1  1.06647e+05
+    2  2.18516e+02
+    3  1.51007e+00
+    4  1.88204e-04
+    5  9.46132e-11
+Elapsed time is 141.743617 seconds.
+→ 完了
+[2/3] 実行中: FN_Int.m
+===> Default display of intervals by infimum/supremum (e.g. [ 3.14 , 3.15 ])
+===> Slow but sharp interval matrix multiplication in use
+R = 10000  N = 20000  alp = -2     k = 7  ord = 1 
+defect:1.4208e-07  |Nu|:7.6880e-09  z2:1.7693e-25
+  its   |z0|     |z1|     z2       z3       z4       z5       z6       |Wn|     |W*|     beta    1 8.56e+03 2.45e+04 1.77e-25 6.23e-12 1.52e+00 3.40e-04 6.08e-07 3.13e-12 3.11e-12 2.44e-16
+    2 8.56e+03 2.45e+04 1.77e-25 7.02e-17 1.52e+00 3.40e-04 6.08e-07 3.13e-12 2.60e-12 3.43e-12
+    3 8.56e+03 2.45e+04 1.77e-25 9.85e-13 1.52e+00 3.40e-04 6.08e-07 3.13e-12 2.67e-12 2.86e-12
+Verification has been completed!
+max(Wn): 3.131471e-12
+  alpha: 2.665063e-12
+Elapsed time is 31170.975413 seconds.
+→ 完了
+[3/3] 実行中: unimodality.m
+===> Default display of intervals by infimum/supremum (e.g. [ 3.14 , 3.15 ])
+===> Slow but sharp interval matrix multiplication in use
+[1/3]: sign(ψ'[0,h]) != sign(ψ'[π-h,π])?
+Passed
+[2/3]: {i | 0 \in [ψ'([x_i])]} is consecutive?
+Passed
+[3/3]: ψ'' does not change its sign near ψ'(x)=0?
+Passed
+Unimodality is verified!
+Elapsed time is 176.918601 seconds.
+→ 完了
+
+実行終了: 20260526_232248

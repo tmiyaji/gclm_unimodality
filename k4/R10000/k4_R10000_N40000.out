@@ -1,0 +1,62 @@
+ 
+ 
+=========================================================================
+*****  Please provide proper reference to                                
+*****     S.M. Rump: INTLAB - INTerval LABoratory. In Tibor Csendes,     
+*****       editor, Developments in Reliable Computing, pages 77-104.    
+*****       Kluwer Academic Publishers, Dordrecht, 1999,                 
+*****       http://www.ti3.tuhh.de/intlab .                              
+*****                                                                    
+*****  Commercial use or use in conjunction with a commercial program    
+*****  which requires INTLAB or part of INTLAB to function properly      
+*****  requires a special license. Please contact me  rump (at) tuhh.de  
+ 
+ 
+: 20260420_172750
+: log20260420_172750.txt
+
+N = 40000;       % Truncation wave number
+R = 10000.0;      % Reynolds number
+k = 4;         % Wave number of external force
+alp = -2;      % gCLM parameter
+ord = 1;       % regularity parameter: X^s (s=ord)
+tol = eps^3;   % tolelance of approximate solution (if tol>0, then x(abs(x)<tol) = 0)
+e_ap = 10^(-11);% Stopping criterion for the Newton method
+M_su = 10000;  % Number of subinterval used in strongunimodality.m
+M_wu = 10000;  % Number of subinterval used in unimodality.m
+
+[1/3] : approximate_solution.m
+R = 10000  N = 40000  alp = -2     k = 4 
+  its  relative error    1  8.17756e+00
+    2  7.17092e-03
+    3  6.23679e-08
+    4  4.47426e-12
+Elapsed time is 542.326155 seconds.
+ 
+[2/3] : FN_Int.m
+===> Default display of intervals by infimum/supremum (e.g. [ 3.14 , 3.15 ])
+===> Slow but sharp interval matrix multiplication in use
+R = 10000  N = 40000  alp = -2     k = 4  ord = 1 
+defect:1.0658e-09  |Nu|:1.3228e-09  z2:0.0000e+00
+  its   |z0|     |z1|     z2       z3       z4       z5       z6       |Wn|     |W*|     beta    1 1.73e+04 6.08e+04 0.00e+00 9.08e-12 1.44e+00 2.49e-05 2.15e-07 5.92e-14 2.27e-12 2.44e-16
+    2 1.73e+04 6.08e+04 0.00e+00 5.21e-17 1.44e+00 2.49e-05 2.15e-07 5.92e-14 8.99e-13 2.50e-12
+    3 1.73e+04 6.08e+04 0.00e+00 5.33e-13 1.44e+00 2.49e-05 2.15e-07 5.92e-14 4.90e-13 9.89e-13
+Verification has been completed!
+max(Wn): 5.923892e-14
+  alpha: 4.895436e-13
+Elapsed time is 238543.346285 seconds.
+ 
+[3/3] : unimodality.m
+===> Default display of intervals by infimum/supremum (e.g. [ 3.14 , 3.15 ])
+===> Slow but sharp interval matrix multiplication in use
+[1/3]: sign('[0,h]) != sign('[-h,])?
+Passed
+[2/3]: {i | 0 \in ['([x_i])]} is consecutive?
+Passed
+[3/3]: '' does not change its sign near '(x)=0?
+Passed
+Unimodality is verified!
+Elapsed time is 320.860306 seconds.
+ 
+
+: 20260423_115804
