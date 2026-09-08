@@ -31,7 +31,7 @@
   fig.Position(3:4) = [width_cm, height_cm];
   set(gcf, 'DefaultLineLineWidth', 1.);
   tiles = tiledlayout(1,2);
-  title(tiles, "$R=10^4$", 'Interpreter', 'latex');
+  % title(tiles, "$R=10^4$", 'Interpreter', 'latex');
   
   % colors = get(gca, 'ColorOrder');
   colors = [

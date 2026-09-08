@@ -3,8 +3,9 @@ function u = initial_value(N)
   u = zeros(N,1);
 % For k=2 and R=0.4, 0.1*sin(kx) gives a good approximation 
 % u(2) = 0.1;
-  u(1) = -sqrt(2.0/3.0); 
+  % u(1) = -sqrt(2.0/3.0); 
   % u(1) = 0.18; 
+  % u(1)=0.2;
 
 % Read initial guess from text file
 % Just min(N, length(temp)) items are copied
@@ -22,13 +23,17 @@ function u = initial_value(N)
 % fid = fopen("data\auto\sol_k4_R5e3.dat", "r");
 % fid = fopen("data\auto\sol_k5_R5e3.dat", "r");
 % fid = fopen("data\auto\sol_k6_R5e3.dat", "r");
-% fid = fopen("data\auto\sol_k7_R5e3.dat", "r");
-% fid = fopen("data\auto\sol_k8_R5e3.dat", "r");
-% fid = fopen("data\auto\sol_k9_R5e3.dat", "r");
-% fid = fopen("data\auto\sol_k10_R5e3.dat", "r");
 % 
 % data = textscan(fid, '%f');
 % fclose(fid);
 % temp = data{1}(2:end);
 % len_temp = length(temp);
 % u(1:min(N,len_temp)) = temp(1:min(N,len_temp));
+
+% fid = fopen('k100\appb_k100R10k.dat');
+fid = fopen('k101\appb_k101R10k.dat');
+temp = fread(fid,'double');
+status = fclose(fid);
+len_temp = length(temp);
+u(1:min(N,len_temp)) = temp(1:min(N,len_temp));
+  

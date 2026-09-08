@@ -18,14 +18,8 @@ function u = initial_value(N)
 % fid = fopen("data\auto\sol_k2_R1e1.dat", "r"); % N=128
 % fid = fopen("data\auto\sol_k2_R1e3.dat", "r"); % R=100,N=256
 % fid = fopen("data\auto\sol_k2_R3e3.dat", "r");
-% fid = fopen("data\auto\sol_k3_R3e3.dat", "r");
 % fid = fopen("data\auto\sol_k4_R5e3.dat", "r");
-% fid = fopen("data\auto\sol_k5_R5e3.dat", "r");
 % fid = fopen("data\auto\sol_k6_R5e3.dat", "r");
-% fid = fopen("data\auto\sol_k7_R5e3.dat", "r");
-% fid = fopen("data\auto\sol_k8_R5e3.dat", "r");
-% fid = fopen("data\auto\sol_k9_R5e3.dat", "r");
-% fid = fopen("data\auto\sol_k10_R5e3.dat", "r");
 % 
 % data = textscan(fid, '%f');
 % fclose(fid);

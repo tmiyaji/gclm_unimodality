@@ -11,8 +11,8 @@ function [z0,z1,z3,z4,z5,z6,Mu] = zs(N,u,w,alp,C,Ck,ord)
   for m=1:N
     em = intval(m);
     en = intval((1:N)');
-    p = ((Alp + one) * en + em) .* v(1:N) / two;
-    q = ((Alp + one) * en - em) .* v(1:N) / two;
+    p = -((Alp + one) * en + em) .* v(1:N) / two;
+    q =  ((Alp + one) * en - em) .* v(1:N) / two;
 
     kappa = intval(zeros(2*N,1));
     kappa(m+1:N+m) = kappa(m+1:N+m) + p;
@@ -33,8 +33,8 @@ function [z0,z1,z3,z4,z5,z6,Mu] = zs(N,u,w,alp,C,Ck,ord)
   for m=1:N
     em = intval(m);
     en = intval((1:N)');
-    p = ((Alp + one) * en + two*Alp*em) .* v(1:N) ./ (two*en);
-    q = ((Alp + one) * en - two*Alp*em) .* v(1:N) ./ (two*en);
+    p = -((Alp + one) * en + Alp*em) .* v(1:N) ./ (two*en);
+    q =  ((Alp + one) * en - Alp*em) .* v(1:N) ./ (two*en);
 
     kappa = intval(zeros(2*N,1));
     % sin(n+m)x coefficients: n from m+1 to m+N
